@@ -1,5 +1,6 @@
 package com.shimon.e_commercepractice.di
 
+import com.shimon.e_commercepractice.Services.AuthService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,13 +15,15 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit() : Retrofit.Builder{
-
+    fun provideRetrofitBuilder(): Retrofit.Builder {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://api.escuelajs.co/api/v1/")
             .addConverterFactory(GsonConverterFactory.create())
-
-
     }
 
+    @Provides
+    @Singleton
+    fun provideAuthService(retrofit: Retrofit.Builder): AuthService { // Renamed to make it more descriptive
+        return retrofit.build().create(AuthService::class.java)
+    }
 }
