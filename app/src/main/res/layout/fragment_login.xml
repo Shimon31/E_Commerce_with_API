@@ -3,28 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="#009688"
-    tools:context=".LoginFragment">
+    tools:context=".ui.login.LoginFragment">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/e_commerce" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/emailET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@drawable/edite_text_bg"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="5dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:padding="10dp"
         android:textSize="20sp" />
+
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/passwordET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="@drawable/edite_text_bg"
+        android:drawableLeft="@drawable/baseline_key_off_24"
+        android:drawablePadding="5dp"
         android:hint="Password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
+        android:padding="10dp"
         android:textSize="20sp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edite_text_bg"
+        android:backgroundTint="#FF9800"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/createAnAccountTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Create an Account"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
