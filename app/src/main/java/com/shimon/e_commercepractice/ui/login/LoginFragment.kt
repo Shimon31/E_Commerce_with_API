@@ -40,6 +40,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.createAnAccountTV.setOnClickListener {
+
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+
+        }
+
         binding.loginBtn.setOnClickListener {
 
             val email = binding.emailET.text.toString()
