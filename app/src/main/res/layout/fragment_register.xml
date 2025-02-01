@@ -6,7 +6,7 @@
     android:background="#009688"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".RegisterFragment">
+    tools:context=".ui.registration.RegisterFragment">
 
     <ImageView
         android:layout_width="100dp"

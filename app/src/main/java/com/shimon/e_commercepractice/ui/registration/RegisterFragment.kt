@@ -1,4 +1,4 @@
-package com.shimon.e_commercepractice
+package com.shimon.e_commercepractice.ui.registration
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.shimon.e_commercepractice.databinding.FragmentLoginBinding
+import com.shimon.e_commercepractice.R
 import com.shimon.e_commercepractice.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     lateinit var binding: FragmentRegisterBinding
@@ -30,6 +32,8 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
+
+
 
 
 }

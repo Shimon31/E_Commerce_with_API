@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.shimon.e_commercepractice.RegisterFragment"
+        android:name="com.shimon.e_commercepractice.ui.registration.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action

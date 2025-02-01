@@ -1,6 +1,6 @@
 package com.shimon.e_commercepractice.data.model.Register
 
-data class RequestLogin(
+data class RequestRegistration(
     val avatar: String,
     val email: String,
     val name: String,
