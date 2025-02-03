@@ -5,40 +5,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.runtime.key
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.shimon.e_commercepractice.R
+import com.shimon.e_commercepractice.Utils.PrefManager
+import com.shimon.e_commercepractice.Utils.key
+import com.shimon.e_commercepractice.base.baseFragment
 import com.shimon.e_commercepractice.data.model.Login.RequestLogin
 import com.shimon.e_commercepractice.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
 
 @AndroidEntryPoint
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
+class LoginFragment : baseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
+
 
     val viewModel: LoginViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+    @Inject
+    lateinit var prefManager: PrefManager
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         viewModel.LoginResponse.observe(viewLifecycleOwner) {
 
             if (it.isSuccessful) {
+
+                prefManager.setPref(key.Access_Token,it.body()?.access_token!!)
+                prefManager.setPref(key.Refresh_Token,it.body()?.refresh_token!!)
 
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             }
 
 
         }
-
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         binding.createAnAccountTV.setOnClickListener {
 
@@ -52,7 +55,7 @@ class LoginFragment : Fragment() {
             val password = binding.passwordET.text.toString()
 
 
-            handleLogin("john@mail.com", "changeme")
+            handleLogin(email, password)
 
         }
 
