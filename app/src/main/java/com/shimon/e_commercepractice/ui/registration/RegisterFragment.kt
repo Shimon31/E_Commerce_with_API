@@ -38,11 +38,10 @@ class RegisterFragment : baseFragment<FragmentRegisterBinding>(FragmentRegisterB
             var name = binding.nameET.text.toString().trim()
             var email = binding.emailET.text.toString().trim()
             var password = binding.passwordET.text.toString().trim()
-            var avatar =
-                "https://www.google.com/imgres?q=sadek%20bhuiya%20shimon&imgurl=https%3A%2F%2Fcricheroes-media-mumbai.s3.ap-south-1.amazonaws.com%2Fuser_profile%2F1668174516162_kejQFXsUR2x4.jpg%3Fwidth%3D3840%26quality%3D75%26format%3Dauto&imgrefurl=https%3A%2F%2Fcricheroes.com%2Fscorecard%2F4759345%2Fyksg-1-short-pitch-cricket-turnament-2022%2Fnb-2-vs-nb-10%2Fmvp&docid=UKONeORs3rLmBM&tbnid=a-mw2mNw7gNXQM&vet=12ahUKEwj63KDR3qSLAxVph68BHfr4E_AQM3oECG0QAA..i&w=1080&h=1080&hcb=2&itg=1&ved=2ahUKEwj63KDR3qSLAxVph68BHfr4E_AQM3oECG0QAA"
+            var imageAvatar ="https://media.licdn.com/dms/image/v2/D5603AQErtE23hVt_9g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725974334692?e=2147483647&v=beta&t=wf3tC9QCVFXiThXP3zq9UQhQ4ColGEq05-wgnqbF0fg"
 
             val requestRegister = RequestRegistration(
-                avatar = avatar,
+                avatar = imageAvatar,
                 email = email,
                 name = name,
                 password = password

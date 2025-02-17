@@ -22,7 +22,10 @@ class ProfileViewModel @Inject constructor(private val repo: UserService) : View
     var profileResponse: LiveData<Response<ResponseProfile>> = _response
 
 
-    fun profile() {
+    init {
+        profile()
+    }
+   private fun profile() {
         viewModelScope.launch {
             _response.postValue(repo.profile())
         }

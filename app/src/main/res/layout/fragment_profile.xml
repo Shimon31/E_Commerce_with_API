@@ -9,7 +9,7 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/profileIV"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_background"
@@ -38,18 +38,6 @@
         android:text="Role: Customer"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/creation_at"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created At: 2025-02-02T13:15:11.000Z"
-        android:textSize="14sp" />
 
-    <TextView
-        android:id="@+id/updated_at"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Updated At: 2025-02-02T13:15:11.000Z"
-        android:textSize="14sp" />
 
 </LinearLayout>

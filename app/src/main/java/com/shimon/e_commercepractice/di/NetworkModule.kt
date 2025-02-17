@@ -1,6 +1,7 @@
 package com.shimon.e_commercepractice.di
 
 import com.shimon.e_commercepractice.Services.AuthService
+import com.shimon.e_commercepractice.Services.UploadService
 import com.shimon.e_commercepractice.Services.UserService
 import com.shimon.e_commercepractice.Utils.AuthInterceptor
 import dagger.Module
@@ -28,6 +29,12 @@ class NetworkModule {
     @Singleton
     fun provideAuthService(retrofit: Retrofit.Builder): AuthService {
         return retrofit.build().create(AuthService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUploadService(retrofit: Retrofit.Builder): UploadService {
+        return retrofit.build().create(UploadService::class.java)
     }
 
     @Provides

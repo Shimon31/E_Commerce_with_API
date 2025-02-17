@@ -37,7 +37,8 @@ class LoginFragment : baseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 prefManager.setPref(key.Access_Token,it.body()?.access_token!!)
                 prefManager.setPref(key.Refresh_Token,it.body()?.refresh_token!!)
 
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+               // findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_loginFragment_to_profileFragment)
             }
 
 
